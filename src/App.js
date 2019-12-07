@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Main, Container } from "./styles/style";
+import Slide from "./components/slide";
 
-function App() {
+
+
+const App = () => {
+  const [items, setItems]= useState([]);
+  useEffect(() => {
+    const data ="https://api.myjson.com/bins/ea8gg"; 
+    fetch(data)
+    .then(res => res.json())
+    .then(json => setItems(json));
+
+  },[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Main>
+
+      <Container>
+        {
+          items.map((item) => {
+            return <Slide key={item.id} src={item.image} alt={item.name} />
+          })
+        }
+      </Container>
+    </Main>
+  )
+};
 
 export default App;
