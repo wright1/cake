@@ -1,5 +1,25 @@
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 
+export const GlobalStyle = createGlobalStyle`
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  margin: 0;
+  border: 0;
+  height: 100%
+  width: 100%
+}
+`;
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+`;
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,15 +33,9 @@ export const Container = styled.div`
     overflow: hidden; 
   }
 `;
-export const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-`;
 export const Img = styled.img`
   width: 75vw;
-  height: auto;
+  height: 45vh;
   margin: 5vh auto;
   position: absolute;
   transition: transform 0.5s, opacity 0.5s;
@@ -30,4 +44,18 @@ export const Img = styled.img`
     margin: 1vw;
     position: static;
   }
+`;
+export const Title = styled.div`
+display: flex;
+flex-direction: column;
+width: 80vw;
+height: 25vh;
+align-items: center;
+justify-content: center;
+font-family: 'Bebas Neue', cursive;
+font-size: 2rem;
+`;
+export const Span = styled.span`
+font-family: 'Kristi', cursive;
+margin-top: -0.5rem;
 `;

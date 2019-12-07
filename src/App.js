@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Main, Container } from "./styles/style";
+import { Main, Container, GlobalStyle } from "./styles/style";
 import Slide from "./components/slide";
+import Header from "./components/header";
 
 
 
@@ -14,8 +15,10 @@ const App = () => {
 
   },[]);
   return (
+    <>
+    <GlobalStyle />
     <Main>
-
+      <Header />
       <Container>
         {
           items.map((item) => {
@@ -24,6 +27,7 @@ const App = () => {
         }
       </Container>
     </Main>
+    </>
   )
 };
 
