@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 html{
@@ -30,12 +30,12 @@ export const Container = styled.div`
     width: 66vw;
     height: 35vh;
     margin: auto;
-    overflow: hidden; 
+    overflow: hidden;
   }
 `;
 export const Img = styled.img`
   width: 75vw;
-  height: 45vh;
+  height: 40vh;
   margin: 5vh auto;
   position: absolute;
   transition: transform 0.8s, opacity 0.5s;
@@ -46,59 +46,72 @@ export const Img = styled.img`
   }
 `;
 export const Title = styled.div`
-display: flex;
-flex-direction: column;
-width: 80vw;
-height: 25vh;
-align-items: center;
-justify-content: center;
-font-family: 'Bebas Neue', cursive;
-font-size: 2.3rem;
-color: #340744;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 25vh;
+  margin-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2.3rem;
+  color: #340744;
 `;
 export const Span = styled.span`
-font-family: 'Kristi', cursive;
-margin-top: -0.5rem;
+  font-family: "Kristi", cursive;
+  margin-top: -0.5rem;
 `;
 export const BtnContainer = styled.div`
-display: flex;
-width: 40vw;
-justify-content: space-between;
-position: fixed;
-top: 80vh;
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+  position: fixed;
+  top: 80vh;
 `;
 export const Button = styled.button`
-width: 3rem;
-height: 3rem;
-border-radius: 50rem;
-background: transparent;
-border: 0.5px solid grey;
-outline: none;
-&:hover{
-  color: #741AAC;
-}
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50rem;
+  background: transparent;
+  border: 1px solid #340744;
+  outline: none;
+  &:hover {
+    color: #741aac;
+    border: 1px solid #741aac;
+  }
 `;
 export const Modal = styled.div`
-visibility: hidden;
-position: fixed;
-z-index: 1;
-left: 0;
-top: 0;
-width: 100vw;
-height: 100vh;
-overflow: auto;
-background-color: rgb(0,0,0);
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: #340744;
 `;
 export const ModalContent = styled.div`
-margin: 15vh auto;
-padding: 5vw;
-border: 3px solid red;
-width: 80vw;
-color: white;
-overflow: auto;
+  margin: 15vh auto;
+  padding: 5vw;
+  border: 0.3px solid #340744;
+  width: 80vw;
+  background-color: #f7eef5;
+  overflow: auto;
 `;
 export const ModalButton = styled.button`
-font-size: 3rem;
-background-color: black;
-color: white;
+  font-size: 3rem;
+  background-color: #340744;
+  float: right;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: #f7eef5;
+  cursor: pointer;
+`;
+export const ModalSpan = styled(Span)`
+  font-size: 3rem;
+`;
+export const UL = styled.ul`
+  font-family: "Open Sans";
 `;
