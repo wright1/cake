@@ -27,7 +27,7 @@ export const Container = styled.div`
   margin: 0.2rem;
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
-    width: 67vw;
+    width: 66vw;
     height: 35vh;
     margin: auto;
     overflow: hidden; 

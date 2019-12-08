@@ -61,9 +61,9 @@ const App = () => {
     imgList[slideRef.current].style.transform = `translateX(${-0.5}px)`;
     } else {
       count.current -= 2;
-      const current = imgList[count.current];
       if(count.current < 1) count.current = 1;
-  
+      const current = imgList[count.current];
+    
       console.log(count.current, imgList)
       imgList[count.current-1].style.display = "initial";
       current.style.display = "initial";
