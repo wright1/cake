@@ -8,9 +8,11 @@ import {
 } from "./styles/style";
 import Slide from "./components/slide";
 import Header from "./components/header";
+import FullModal from "./components/modal";
 
 const App = () => {
   const [items, setItems] = useState([]);
+  const [recipeObj, setRecipeObj]= useState([]);
   // this varible keeps a reference of which image we are seeing
   const slideRef = useRef(8);
   const count = useRef(1);
@@ -60,6 +62,7 @@ const App = () => {
     slideRef.current++;
     imgList[slideRef.current].style.transform = `translateX(${-0.5}px)`;
     } else {
+    // fullwidth view
       count.current -= 2;
       if(count.current < 1) count.current = 1;
       const current = imgList[count.current];
@@ -68,18 +71,46 @@ const App = () => {
       imgList[count.current-1].style.display = "initial";
       current.style.display = "initial";
       imgList[count.current +1].style.display = "initial"; 
-    }
-    
-  }
+    }  
+  };
+  const recipe = (e) => {
+    console.log(e.target.alt)
+    // filter the correct recipe object
+    const dessert = items.filter((item) => {
+      return e.target.alt === item.name
+    })
+    // set the object into state
+    setRecipeObj(dessert);
+    // popUp modal
+    const modal = e.target.parentNode.parentNode.firstChild;
+    modal.style.visibility = "visible";
 
+  }
+  console.log(items)
   return (
     <>
       <GlobalStyle />
       <Main>
+        <FullModal
+        ingred={
+          recipeObj.map((item) => {
+            return item.ingredients.map((ingredient,i) => {
+              return <ul key={`${new Date().getTime}${i}`}>{ingredient}</ul>
+            });
+          })
+        }
+        method={
+          recipeObj.map((item) => {
+            return item.method.map((step, i) => {
+            return <ul key={`${new Date().getTime}${i}`}>{step}</ul>
+            })
+          })
+        }
+        />
         <Header />
         <Container>
           {items.map(item => {
-            return <Slide key={item.id} src={item.image} alt={item.name} />;
+            return <Slide key={item.id} src={item.image} alt={item.name} onClick={recipe} />;
           })}
         </Container>
         <BtnContainer>

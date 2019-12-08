@@ -78,3 +78,27 @@ outline: none;
   color: #741AAC;
 }
 `;
+export const Modal = styled.div`
+visibility: hidden;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100vw;
+height: 100vh;
+overflow: auto;
+background-color: rgb(0,0,0);
+`;
+export const ModalContent = styled.div`
+margin: 15vh auto;
+padding: 5vw;
+border: 3px solid red;
+width: 80vw;
+color: white;
+overflow: auto;
+`;
+export const ModalButton = styled.button`
+font-size: 3rem;
+background-color: black;
+color: white;
+`;
