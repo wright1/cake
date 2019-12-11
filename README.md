@@ -9,5 +9,5 @@ Clicking on the bottom buttons allows you to browse the desserts.
 
 ![cake](https://user-images.githubusercontent.com/20236080/70393652-260f5b80-19e4-11ea-97f3-8e3d1e6e8002.png)
 
-This website was created using CRA and Styled-components.
+This website was created using Create React App and Styled-components.
 
