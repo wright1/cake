@@ -39,6 +39,7 @@ export const Img = styled.img`
   margin: 5vh auto;
   position: absolute;
   transition: transform 0.8s, opacity 0.5s;
+  cursor: pointer;
   @media only screen and (min-width: 1024px) {
     width: 20vw;
     margin: 1vw;
