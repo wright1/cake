@@ -65,6 +65,7 @@ export const Span = styled.span`
 export const BtnContainer = styled.div`
   display: flex;
   width: 40vw;
+  align-items: center;
   justify-content: space-between;
   position: fixed;
   top: 80vh;
